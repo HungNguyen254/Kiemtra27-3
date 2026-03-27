@@ -116,4 +116,24 @@ function searchproduct() {
     })
     renderlist(foundProduct);
 }
+function sortproduct() {
+    let sortvalue = document.getElementById("sortSelect");
+    if (sortvalue.value == "price_asc") {
+        let sorted=products.sort((a,b)=>a.price-b.price);
+        console.log(sorted);
+        renderlist(sorted)
+    }
+    if(sortvalue.value == "name_asc"){
+        let sorted = products.sort((a,b)=>a.name-b.name)
+        renderlist(sorted)
+    }
+    if(sortvalue.value == "name_desc"){
+        let sorted = products.sort((a,b)=>b.name-a.name)
+        renderlist(sorted)
+    }
+    if(sortvalue.value == "price_desc"){
+        let sorted = products.sort((a,b)=>b.price-a.price)
+        renderlist(sorted)
+    }
+}
 // localStorage.clear();
